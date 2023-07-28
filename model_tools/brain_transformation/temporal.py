@@ -4,7 +4,7 @@ import logging
 import numpy as np
 
 from brainio.assemblies import merge_data_arrays, walk_coords
-from brainscore.model_interface import BrainModel
+from brainscore_vision.model_interface import BrainModel
 from model_tools.utils import fullname
 
 

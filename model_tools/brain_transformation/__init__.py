@@ -1,7 +1,7 @@
-from brainscore.benchmarks.public_benchmarks import FreemanZiembaV1PublicBenchmark, FreemanZiembaV2PublicBenchmark, \
-    MajajHongV4PublicBenchmark, MajajHongITPublicBenchmark
-from brainscore.model_interface import BrainModel
-from brainscore.utils import LazyLoad
+from brainscore_vision.benchmarks.freemanziemba2013.benchmarks.public_benchmarks import FreemanZiembaV1PublicBenchmark, FreemanZiembaV2PublicBenchmark
+from brainscore_vision.benchmarks.majajhong2015.benchmark import MajajHongV4PublicBenchmark, MajajHongITPublicBenchmark
+from brainscore_vision.model_interface import BrainModel
+from brainscore_vision.utils import LazyLoad
 from model_tools.brain_transformation.temporal import TemporalIgnore
 from .behavior import BehaviorArbiter, LabelBehavior, ProbabilitiesMapping
 from .neural import LayerMappedModel, LayerSelection, LayerScores
@@ -25,8 +25,8 @@ class ModelCommitment(BrainModel):
                  visual_degrees=8):
         self.layers = layers
         self.activations_model = activations_model
-        self._visual_degrees = visual_degrees
-        # region-layer mapping
+        self._visual_degrees = visual_degrees 
+        # note: region layer mapping
         if region_layer_map is None:
             layer_selection = LayerSelection(model_identifier=identifier,
                                              activations_model=activations_model, layers=layers,

@@ -2,9 +2,9 @@ import logging
 from tqdm import tqdm
 from typing import Optional, Union
 
-from brainscore.metrics import Score
-from brainscore.model_interface import BrainModel
-from brainscore.utils import fullname
+from brainscore_vision.metrics import Score
+from brainscore_vision.model_interface import BrainModel
+from brainscore_vision.utils import fullname
 from model_tools.activations.pca import LayerPCA
 from model_tools.brain_transformation import TemporalIgnore
 from model_tools.utils import make_list
