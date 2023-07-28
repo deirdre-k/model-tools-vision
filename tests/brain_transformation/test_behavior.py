@@ -8,10 +8,10 @@ from pytest import approx
 
 from brainio.assemblies import BehavioralAssembly
 from brainio.stimuli import StimulusSet
-from brainscore.benchmarks.rajalingham2018 import _DicarloRajalingham2018
-from brainscore.benchmarks.screen import place_on_screen
-from brainscore.metrics.image_level_behavior import I2n
-from brainscore.model_interface import BrainModel
+from brainscore_vision.benchmarks.rajalingham2018 import DicarloRajalingham2018I2n
+from brainscore_vision.benchmark_helpers.screen import place_on_screen
+from brainscore_vision.metrics.image_level_behavior import I2n
+from brainscore_vision.model_interface import BrainModel
 from model_tools.activations import PytorchWrapper
 from model_tools.brain_transformation import ModelCommitment, ProbabilitiesMapping
 
@@ -139,9 +139,9 @@ class TestI2N:
                                  ('resnet18', .3638),
                              ])
     def test_model(self, model, expected_score):
-        class UnceiledBenchmark(_DicarloRajalingham2018):
+        class UnceiledBenchmark(DicarloRajalingham2018I2n):
             def __init__(self):
-                super(UnceiledBenchmark, self).__init__(metric=I2n(), metric_identifier='i2n')
+                super(UnceiledBenchmark, self).__init__()
 
             def __call__(self, candidate: BrainModel):
                 candidate.start_task(BrainModel.Task.probabilities, self._fitting_stimuli)

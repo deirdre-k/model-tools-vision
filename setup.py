@@ -24,7 +24,7 @@ requirements = [
 
 setup(
     name='model-tools',
-    version='0.1.0',
+    version='0.1.1',
     description="Tools for predictive models of brain processing.",
     long_description=readme,
     author="Martin Schrimpf",

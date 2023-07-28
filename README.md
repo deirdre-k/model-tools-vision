@@ -1,3 +1,6 @@
+This version of model-tools was created to facilitate testing during the brainscore_vision model migration. It is intended to be a temporary fix and is not guarenteed to work in any capacity besides as a dependency for the current [brainscore_vision](https://github.com/brain-score/brain-score/tree/mschrimpf/integrate_models).
+
+
 [![Build Status](https://travis-ci.com/brain-score/model-tools.svg?token=vqt7d2yhhpLGwHsiTZvT&branch=master)](https://travis-ci.com/brain-score/model-tools)
 
 # Brain-Score Model Tools
